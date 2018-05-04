@@ -12,8 +12,8 @@ class UsersSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Quasar User',
-            'email' => 'quasar@quasar-framework.org',
+            'name' => 'quasar',
+            'email' => 'admin@realpizza.com',
             'password' => bcrypt('quasar')
         ]);
     }
