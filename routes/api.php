@@ -22,9 +22,9 @@ $api->version('v1', function ($api) {
         $api->post('register', 'AuthenticateController@register');
         $api->post('refresh-token', 'AuthenticateController@refreshToken');
 
-        $api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
+        //$api->group( [ 'middleware' => ['jwt.auth'] ], function ($api) {
             $api->get('jokes', 'JokesController@index');
-            $api->get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
-        });
+            //$api->get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
+        //});
     });
 });

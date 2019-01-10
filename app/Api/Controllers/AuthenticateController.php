@@ -14,8 +14,10 @@ class AuthenticateController extends BaseController
     public function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
+        dd($credentials);
 
-        try {
+        /*
+		try {
             // verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'invalid_credentials', 'message' => 'Wrong credentials. Try again'], 401);
@@ -24,9 +26,10 @@ class AuthenticateController extends BaseController
             // something went wrong
             return response()->json(['error' => 'could_not_create_token', 'message' => 'Could not create token. Try again'], 500);
         }
+		*/
 
         // if no errors are encountered we can return a JWT
-        return response()->json(compact('token'));
+        return response()->json(compact('credentials'));
     }
 
     public function register(Request $request)
